@@ -36,6 +36,7 @@ For detailed usage of ESMFold, please refer to the [ESMFold documentation](https
    ```bash
    python graph_construct_train.py example_data/cyano_host_label.txt train_graphs example_data/prokka/ example_data/esm/
    ```
+   
 2. Train the model:
    ```bash
    python train.py <train_label_file> <graph_data>  
@@ -48,14 +49,16 @@ For detailed usage of ESMFold, please refer to the [ESMFold documentation](https
 ### 4. Prediction
 1. Generate graph representations for prediction data:
    ```bash
-   python graph_construct_pred.py
+   python graph_construct_pred.py <pred_file> <pred_save_path> <prokka_path> <esm_path>
    ```
+   Note: The “pred_label_file” does not require host and index label.
+
 2. Make predictions using the trained model:
    ```bash
-   python predict.py <model_path> <data_path> <output_path>
+   python predict.py <model_path> <graph_path> <output_path>
    ```
    - `model_path`: Path to the trained model
-   - `data_path`: Path to the prediction data
+   - `data_path`: Path to the prediction graph data
    - `output_path`: Path to save prediction results
 
 ## File Descriptions
